@@ -1,8 +1,23 @@
+param(  
+	[int]$interval
+)
+
+
 $second = 1000
 $minute = 60 * $second
+
+"interval params:" + $interval
+
+If($interval -lt 10 * $second)
+{
+	$interval = 10 * $second
+}
+
+"final interval:" + $interval
+
 $sourceIdentifier = "EldenRingGameSaveFileAutoBackup"
 $timer = New-Object -TypeName System.Timers.Timer    
-$timer.Interval = 10 * $second
+$timer.Interval = $interval
 $timer.Autoreset = $True
 $timer.Enabled = $True
 
@@ -25,7 +40,7 @@ $EventJob = Register-ObjectEvent @objectEventArgs -Action $action
 
 	function Backup-Save-To-Path {
 		param (
-			$destinationFolder
+			[string]$destinationFolder
 		)
 
 		If(!(test-path $destinationFolder))
