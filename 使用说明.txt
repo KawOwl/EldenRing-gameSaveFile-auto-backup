@@ -7,6 +7,12 @@
 右键 StartEldenRingGameSaveFileAutoBackup.ps1 -> 使用 PowerShell 运行
 
 启动后会每10分钟备份一次存档。
+
+默认备份间隔是10分钟，间隔时间通过可以修改Start.ps1文件里的interval参数调整，数字用的是毫秒。
+设置了两个方便计算的变量$second和minute，如果不熟悉直接用数字算间隔也没问题，例如要改成1分钟
+改为 $interval = 1 * $minute
+或者 $interval = 1000 * 60 * 1
+
 会同时备份到EldenRingGameSaveFileAutoBackup和ERGSFAB-BFB下，防止一时手贱把备份也删了，所以搞了个备份的备份。(这算容灾吗，草生)
 
 ## 停止备份
