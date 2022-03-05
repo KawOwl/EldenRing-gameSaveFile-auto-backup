@@ -1,3 +1,6 @@
+#version 1.1
+#author DameNeko
+
 $second = 1000
 $minute = 60 * $second
 

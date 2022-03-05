@@ -1,7 +1,9 @@
+#version 1.1
+#author DameNeko
+
 param(  
 	[int]$interval
 )
-
 
 $second = 1000
 $minute = 60 * $second
@@ -37,6 +39,8 @@ $EventJob = Register-ObjectEvent @objectEventArgs -Action $action
 	$BackupFolderName2 = "\ERGSFAB-BFB"
 	$BackupFolderPath1 = $HOME + $BackupFolderName1
 	$BackupFolderPath2 = $HOME + $BackupFolderName2
+	$DesktopPath = $HOME + "\Desktop"
+	$DesktopSymbolicLinkPath = $DesktopPath + "\EldenRingGameSaveFileAutoBackup.lnk"
 
 	function Backup-Save-To-Path {
 		param (
@@ -58,7 +62,17 @@ $EventJob = Register-ObjectEvent @objectEventArgs -Action $action
 	function Backup-Action {
 		Backup-Save-To-Path -destinationFolder $BackupFolderPath1
 		Backup-Save-To-Path -destinationFolder $BackupFolderPath2
+
+		$DesktopSymbolicLinkPath
+
+		$create_shortcut = (New-Object -ComObject WScript.Shell).CreateShortcut
+		$shortcut = $create_shortcut.invoke($DesktopSymbolicLinkPath)
+		$shortcut.TargetPath = $BackupFolderPath1
+		$shortcut.Description = $sourceIdentifier
+		$shortcut.Save()
 	}
+
+	Backup-Action
 }
 
 $EventJob
