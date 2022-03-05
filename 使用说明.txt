@@ -11,6 +11,4 @@
 
 ## 停止备份
 
-右键 Stop.psStop.ps1 -> 使用 PowerShell 运行
-
-就，就停了。
+关闭双击Start的时候打开的PowerShell窗口，就，就停了。

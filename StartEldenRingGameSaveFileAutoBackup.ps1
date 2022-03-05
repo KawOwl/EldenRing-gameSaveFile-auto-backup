@@ -2,7 +2,7 @@ $second = 1000
 $minute = 60 * $second
 $sourceIdentifier = "EldenRingGameSaveFileAutoBackup"
 $timer = New-Object -TypeName System.Timers.Timer    
-$timer.Interval = 10 * $minute
+$timer.Interval = 10 * $second
 $timer.Autoreset = $True
 $timer.Enabled = $True
 

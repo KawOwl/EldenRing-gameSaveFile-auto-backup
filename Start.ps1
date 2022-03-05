@@ -1,0 +1,1 @@
+PowerShell -NoExit "./StartEldenRingGameSaveFileAutoBackup.ps1"
