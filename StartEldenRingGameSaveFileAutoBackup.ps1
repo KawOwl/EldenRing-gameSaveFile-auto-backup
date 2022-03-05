@@ -18,8 +18,8 @@ $EventJob = Register-ObjectEvent @objectEventArgs -Action $action
 
 . $EventJob.Module {
 	$SavePath = $HOME + "\AppData\Roaming\EldenRing"
-	$BackupFolderName1 = "\EldenRingSaveAutoBackup"
-	$BackupFolderName2 = "\ERSAB-BB"
+	$BackupFolderName1 = "\EldenRingGameSaveFileAutoBackup"
+	$BackupFolderName2 = "\ERGSFAB-BFB"
 	$BackupFolderPath1 = $HOME + $BackupFolderName1
 	$BackupFolderPath2 = $HOME + $BackupFolderName2
 
