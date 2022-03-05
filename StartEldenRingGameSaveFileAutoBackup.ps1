@@ -1,6 +1,6 @@
 $second = 1000
 $minute = 60 * $second
-$sourceIdentifier = "EldenRingSaveBackup"
+$sourceIdentifier = "EldenRingGameSaveFileAutoBackup"
 $timer = New-Object -TypeName System.Timers.Timer    
 $timer.Interval = 10 * $minute
 $timer.Autoreset = $True
@@ -45,3 +45,5 @@ $EventJob = Register-ObjectEvent @objectEventArgs -Action $action
 		Backup-Save-To-Path -destinationFolder $BackupFolderPath2
 	}
 }
+
+$EventJob

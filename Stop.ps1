@@ -1,2 +1,2 @@
-$sourceIdentifier = "EldenRingSaveBackup"
+$sourceIdentifier = "EldenRingGameSaveFileAutoBackup"
 Unregister-Event -SourceIdentifier $sourceIdentifier
