@@ -2,9 +2,11 @@
 
 这游戏支线太多了，一做错或者时间不对又会火葬场。我自己因为任务支线回档了两次，痛苦。
 另外就是steam可能会出现坏档问题，身边有朋友几十个小时的档坏了，折磨。
+老头环存档在用户目录下的\AppData\Roaming\EldenRing(可以通过在资源管理器输入%appdata%\EldenRing再回车快速访问)。
+重要！！建议自己手动备份一下存档再使用，靠别人最后还得靠自己，自己再备份，万无一失。
 
 ## 启动备份
-右键 StartEldenRingGameSaveFileAutoBackup.ps1 -> 使用 PowerShell 运行
+右键 Start.ps1 -> 使用 PowerShell 运行
 
 启动后会每10分钟备份一次存档。
 
@@ -22,6 +24,6 @@
 
 ## 版本信息
 
-v1.1
-2022年3月5日22点50分
+v1.2
+2022年3月7日00点24分
 DameNeko
