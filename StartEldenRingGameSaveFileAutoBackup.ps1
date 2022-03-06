@@ -52,7 +52,7 @@ $EventJob = Register-ObjectEvent @objectEventArgs -Action $action
 			New-Item -ItemType Directory -Force -Path $destinationFolder
 		}
 
-		$now = Get-Date -Format "yyyy年MM月dd日HH时mm分ss秒"
+		$now = Get-Date -Format "yyyy-MM-dd_HH_mm_ss"
 
 		$destinationPath = $destinationFolder + "/" + $now + ".zip"
 		
